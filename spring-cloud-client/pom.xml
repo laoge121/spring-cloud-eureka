@@ -12,6 +12,18 @@
     <artifactId>spring-cloud-client</artifactId>
 
     <dependencies>
+        <!-- config 配置获取 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
+        <!-- actuator 引入config 配置刷新 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
         <!-- 断路 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
