@@ -1,6 +1,9 @@
 package com.yuhou.client.controller;
 
 import com.yuhou.client.service.CustomerService;
+import com.yuhou.client.service.CustomerClientImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +23,10 @@ public class CustomerController {
     @Resource
     private CustomerService customerService;
 
+    @Autowired
+    @Qualifier("customerClient")
+    private CustomerClientImpl customerClient;
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String add() {
 
@@ -32,5 +39,12 @@ public class CustomerController {
     public String add2() {
 
         return customerService.add(1, 2);
+    }
+
+    @RequestMapping(value = "/add3", method = RequestMethod.GET)
+    public String add3() {
+
+        return customerClient.add2();
+
     }
 }

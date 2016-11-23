@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * Created by yuhou on 2016/11/23.
  */
-@FeignClient("YUHOU-SERVICE")
+@FeignClient(value = "YUHOU-SERVICE", fallback = CustomerServiceImpl.class)
 public interface CustomerService {
 
     @RequestMapping(method = RequestMethod.GET, value = "/add")
