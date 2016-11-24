@@ -21,6 +21,7 @@
         <module>spring-cloud-server</module>
         <module>spring-cloud-service</module>
         <module>spring-cloud-client</module>
+        <module>spring-cloud-netflix</module>
     </modules>
     <dependencyManagement>
         <dependencies>
